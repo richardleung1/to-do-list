@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import ListItem from './components/ListItems';
+
+const list = ['Buy food', 'Make food', 'Sell food']
+const listItems = list.map((action, idx) => {
+  return <ListItem doThis={action} />
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <header>My List</header>
+      <div>
+        <ul>
+          <ListItem doThis={'Buy food'} />
+          <ListItem doThis={'Make food'} />
+          <ListItem doThis={'Sell food'} />
+          {listItems}
+        </ul>
+      </div>
     </div>
   );
 }
